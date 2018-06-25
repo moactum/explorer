@@ -1,0 +1,13 @@
+...
+
+frontend ssl
+	bind 0.0.0.0:443 tfo ssl no-sslv3 crt /location/to/certification/
+	default_backend servers_nginx
+frontend http
+	bind 0.0.0.0:80
+	redirect scheme https
+
+backend servers_apache
+	server apache 127.0.0.1:801  maxconn 2048
+backend servers_nginx
+	server nginx 127.0.0.1:802  maxconn 2048
