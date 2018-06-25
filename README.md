@@ -41,25 +41,28 @@
 
 ## test
   - thin explorer
-    - mkdir koa
-    - git checkout ??? koa
+    - git submodule init
+    - git submodule update koa
     - cd koa
     - npm install
     - npm start
     - test /api/block/:args /api/tx/:args /api/address/:args
     - (screen session) node feed-ws.js
     - browse http://localhost:3000
-  - think explorer
-    - mkdir django
-    - git checkout ??? django
+  - thick explorer
+    - git submodule init
+    - git submodule update django
     - cd django
+    - pip3 install -r requirements.txt
     - ./manage.py migrate ;
     - (screen session) ./manage.py sync_ledger --moac 
     - ./manage.py runserver
     - browse http://localhost:8000
 
 ## requirements
-  0. have moac running with --rpc option
-  1. have node.js >= 8
-  2. have python >= 3.6
-  3. have git available
+  0. have moac running with --rpc option (--rpcaddr 0.0.0.0 if not on localhost)
+  1. have git available
+  2. have node.js >= 8
+  3. have python >= 3.6
+  4. update koa/config.js if moac not run from localhost
+  5. have postgresql database running, update django/local_settings.py for database information
