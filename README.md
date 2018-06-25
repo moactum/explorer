@@ -76,4 +76,4 @@
   1. have git available
   2. have node.js >= 8
   3. have python3 >= 3.6, virtualenv is recommended
-  4. have postgresql database running and psql works, update django/local_settings.py for database information
+  4. have postgresql service running and psql works on the empty database, update django/local_settings.py for database information
