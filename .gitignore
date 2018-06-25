@@ -1,0 +1,4 @@
+**/node_moduels
+**/__pycache__
+**/*.lock
+**/*.pyc

@@ -1,0 +1,6 @@
+[submodule "koa"]
+	path = koa
+	url = https://github.com/moactum/chain3_restify.git
+[submodule "django"]
+	path = django
+	url = https://github.com/moactum/moacscan.git
