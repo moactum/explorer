@@ -1,4 +1,5 @@
-**/node_moduels
+**/node_modules
+**/package-lock.json
 **/__pycache__
 **/*.lock
 **/*.pyc
