@@ -47,18 +47,17 @@
     - cd koa
     - npm install
     - screen session for web service with websocket
-      - npm start
-      - node app.js (if start does not work above)
-      - test api query
-        - /api/block/:number_or_hash
-        - /api/uncle/:number_or_hash/:index
-        - /api/tx/:args
-        - /api/address/:address
-        - /api/address/:address/{code,balance,log}
-        - /api/log/:startblock/:endblock
-		- /api/search/:searchterm
+      - node app.js
     - screen session for websocket feed
       - node feed-ws.js
+    - test api query
+      - /api/block/:number_or_hash
+      - /api/uncle/:number_or_hash/:index
+      - /api/tx/:args
+      - /api/address/:address
+      - /api/address/:address/{code,balance,log}
+      - /api/log/:startblock/:endblock
+        - /api/search/:searchterm
     -  web browser
       - http://localhost:3000
         - test live update
@@ -72,7 +71,7 @@
     - ./manage.py migrate ; ./manage.py makemigrations; ./manage.py migrate
     - screen sessions, sychronize from moac to database, calls api from the thin explorer above
       - ./manage.py sync
-	  - celery worker -c4 -A moacscan.celery
+      - celery worker -c4 -A moacscan.celery
     - screen session, run the web server
       - ./manage.py runserver
     - browse http://localhost:8000
@@ -86,3 +85,13 @@
   4. have local postgresql service running and psql works
     1. createdb moacscan
   5. have local redis running
+
+## references
+  - django project
+    - https://www.djangoproject.com/
+  - learn javascript
+    - https://www.liaoxuefeng.com
+  - moac
+    - https://github.com/MOACChain/moac-core
+  - chain3
+    - https://github.com/innowells/Chain3
