@@ -31,13 +31,15 @@
   - linux
   - macos
 
-## docker image
-  - use ubuntu 1804
+## docker and k8s
+  - later
 
 ## deployment
-  - apache
   - nginx
   - haproxy
+
+## production environment
+  - http://moac.guru
 
 ## test
   - thin explorer
@@ -68,16 +70,19 @@
     - cd django
     - pip3 install -r requirements.txt
     - ./manage.py migrate ; ./manage.py makemigrations; ./manage.py migrate
-    - screen session, sychronize from moac to database, calls api from the thin explorer above
-      - ./manage.py sync_ledger 
+    - screen sessions, sychronize from moac to database, calls api from the thin explorer above
+      - ./manage.py sync
 	  - celery worker -c4 -A moacscan.celery
     - screen session, run the web server
       - ./manage.py runserver
     - browse http://localhost:8000
 
-## requirements
-  0. have moac running with --rpc option (--rpcaddr 0.0.0.0 if not on localhost, update koa/config.js and django/local_settings.py in this case)
+## pre-requirements
+  0. have local moac running with --rpc option
+    1. --rpcaddr 0.0.0.0 if not on localhost, update koa/config.js and django/local_settings.py in this case)
   1. have git available
   2. have node.js >= 8
   3. have python3 >= 3.6, virtualenv is recommended
-  4. have postgresql service running and psql works on the empty database, update django/local_settings.py for database information
+  4. have local postgresql service running and psql works
+    1. createdb moacscan
+  5. have local redis running
